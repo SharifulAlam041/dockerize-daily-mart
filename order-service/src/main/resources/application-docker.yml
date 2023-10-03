@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5431/order-service
+    username: postgres
+    password: 123qwe
+    driverClassName: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: broker:29092
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
+    instance:
+      hostname: discovery-server
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411

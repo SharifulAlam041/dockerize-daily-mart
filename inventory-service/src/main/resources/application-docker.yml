@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5435/inventory-service
+    username: postgres
+    password: 123qwe
+    driverClassName: org.postgresql.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
+    instance:
+      hostname: discovery-server
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411
